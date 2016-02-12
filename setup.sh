@@ -1,0 +1,1 @@
+docker run --name "geoserver"  --link master1:master1.gt -p 8082:8080 -d -t kartoza/geoserver
