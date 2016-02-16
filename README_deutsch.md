@@ -20,18 +20,20 @@ docker build -t fzi/geoserver .
 
 ## Run the Container
 
+```sh
 docker run --name "geoserver"  --link master1:master1.gt -p 8082:8080 -d -t fzi/geoserver
+```
 
 **Note:** The server needs a couple of minutes to startup. You can check it's status with `docker logs geoserver`
 
-**Note:** The default geoserver user is 'admin' and the password is 'geoserver'.
+**Note:** The default geoserver user is 'admin' and the password is 'geoserver'. *Please change the password.*
 
-## Nutzung eines Data-Only Containers
+## Usage of Data-Only Containers
 
 
 Docker volumes can be used to persist your data.
 
-```
+```sh
 mkdir -p ~/geoserver_data
 docker run -d -v $HOME/geoserver_data:/opt/geoserver/data_dir kartoza/geserver
 ```
@@ -39,15 +41,8 @@ docker run -d -v $HOME/geoserver_data:/opt/geoserver/data_dir kartoza/geserver
 You need to ensure the ``geoserver_data`` directory has sufficinet permissions
 for the docker process to read / write it.
 
-## Konfigurieren des DataStores
+## Configure Geoserver DataStores
 
+1. Log into Geoserver
 
-Docker volumes can be used to persist your data.
-
-```
-mkdir -p ~/geoserver_data
-docker run -d -v $HOME/geoserver_data:/opt/geoserver/data_dir kartoza/geserver
-```
-
-You need to ensure the ``geoserver_data`` directory has sufficinet permissions
-for the docker process to read / write it.
+2. Select Datastores > new Datastore

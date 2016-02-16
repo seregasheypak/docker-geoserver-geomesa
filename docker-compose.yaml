@@ -1,0 +1,14 @@
+data_geoserver:  
+  image: busybox
+  volumes:
+    - /var/lib/geoserver:/opt/geoserver/data_dir
+  container_name: data_geo
+geoserver:
+  image: fzi/geoserver
+  volumes_from: 
+  - data_geoserver
+  ports:
+  - "8083:8080"
+  links:
+  - master1:master1.gt
+  container_name: geoserver
