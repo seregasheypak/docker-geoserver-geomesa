@@ -32,7 +32,7 @@ RUN if [ ! -f /tmp/resources/geoserver.zip ]; then \
 ENV HOME /opt/geoserver
 ENV GEOSERVER_HOME /opt/geoserver
 ENV JAVA_HOME /usr/
-ENV GEOMESA_VERSION 1.2.0
+ENV GEOMESA_VERSION 1.2.1
 ENV ACCUMULO_VERSION 1.6.2
 ENV HADOOP_VERSION 2.7.2
 ENV THRIFT_VERSION 0.9.1
